@@ -1,0 +1,87 @@
+{
+  "kind": "singleType",
+  "collectionName": "bureaus",
+  "info": {
+    "singularName": "bureau",
+    "pluralName": "bureaus",
+    "displayName": "BureauPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pageLabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "introDescription": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "philosophyTitle": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "philosophyCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.philosophy",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "founderTitle": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "founderCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.founder",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "videoDesktop": {
+      "type": "string"
+    },
+    "videoMobile": {
+      "type": "string"
+    }
+  }
+}

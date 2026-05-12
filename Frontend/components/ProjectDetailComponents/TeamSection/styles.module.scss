@@ -1,0 +1,261 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.teamSection {
+  margin-bottom: 70px;
+
+  &__header {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+
+    h3 {
+      font-family: "Inter";
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: -0.04em;
+      text-align: left;
+
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item {
+      width: calc(50% - 10px);
+      margin-bottom: 30px;
+
+      &__name {
+        p {
+          font-family: "Inter";
+          font-size: 14px;
+          line-height: 120%;
+          letter-spacing: -0.04em;
+          text-align: left;
+          text-transform: uppercase;
+        }
+      }
+
+      &__position {
+        p {
+          font-family: "Inter";
+          font-size: 12px;
+          line-height: 120%;
+          letter-spacing: -0.04em;
+          text-align: left;
+          color: #8C8C8C;
+        }
+      }
+
+    }
+  }
+
+}
+
+@include respond-above(sm) {
+  .teamSection {
+    &__header {
+      padding-bottom: 20px;
+
+      h3 {
+        font-size: 28px;
+      }
+    }
+
+    &__list {
+
+      &__item {
+        width: calc(50% - 10px);
+        margin-bottom: 35px;
+
+      }
+    }
+
+  }
+}
+
+@include respond-above(md) {
+  .teamSection {
+    width: 100%;
+    margin-bottom: 100px;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__header {
+      width: 36.5%;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none;
+
+      h3 {
+        font-family: "Inter";
+        font-size: 36px;
+        line-height: 120%;
+
+      }
+    }
+
+    &__list {
+      width: 49%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &__item {
+        width: calc(33% - 10px);
+        margin-bottom: 60px;
+
+        &__name {
+          margin-bottom: 8px;
+
+          p {
+            font-family: "Inter";
+            font-size: 14px;
+          }
+        }
+
+        &__position {
+          p {
+            font-family: "Inter";
+            font-size: 12px;
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+@include respond-above(mac) {
+  .teamSection {
+    width: 100%;
+    margin-bottom: 200px;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__header {
+      width: 36.5%;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none;
+
+      h3 {
+        font-family: "Inter";
+        font-size: 45px;
+        line-height: 120%;
+
+      }
+    }
+
+    &__list {
+      width: 49%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &__item {
+        width: calc(33% - 10px);
+        margin-bottom: 60px;
+
+        &__name {
+          margin-bottom: 8px;
+
+          p {
+            font-family: "Inter";
+            font-size: 20px;
+          }
+        }
+
+        &__position {
+          p {
+            font-family: "Inter";
+            font-size: 16px;
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+@include respond-above(xlg) {
+  .teamSection {
+    width: 100%;
+
+    &__container {
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .teamSection {
+    margin-bottom: 200px;
+
+    &__container {
+      max-width: calc(1600px - 128px);
+    }
+
+    &__header {
+
+      h3 {
+        font-family: "Inter";
+        font-size: 52px;
+        line-height: 120%;
+
+      }
+    }
+
+    &__list {
+
+      &__item {
+        width: calc(33% - 10px);
+        margin-bottom: 75px;
+
+        &__name {
+          margin-bottom: 12px;
+
+          p {
+            font-family: "Inter";
+            font-size: 24px;
+          }
+        }
+
+        &__position {
+          p {
+            font-family: "Inter";
+            font-size: 18px;
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+@include respond-above(qhd) {
+  .teamSection {
+    margin-bottom: 250px;
+    &__container {
+      max-width: calc(1920px - 144px);
+    }
+  }
+}

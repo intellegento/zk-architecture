@@ -1,0 +1,109 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+
+.textAnimationWrapper {
+  width: 100vw;
+  padding: 0 20px;
+  height: 30px;
+  position: fixed;
+  bottom: 30px;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  mix-blend-mode: difference;
+
+  &__pin {
+    display: flex;
+    width: auto;
+  }
+
+  span {
+    font-family: "Inter-Light";
+      font-size: 16px;
+      line-height: 110%;
+      text-align: center;
+    text-align: center;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    position: relative;
+    color: #fff;
+    letter-spacing: -0.04em;
+  }
+
+  
+}
+
+@include respond-above(sm) {
+  .textAnimationWrapper {
+    padding: 0 30px;
+    bottom: 55px;
+  }
+}
+
+@include respond-above-portrait (sm) {
+  .textAnimationWrapper {
+   bottom: 55px;
+    // left: 40px;
+   
+  }
+}
+
+@include respond-above(md) {
+  .textAnimationWrapper {
+    width: auto;
+    justify-content: flex-start;
+    top: auto;
+    bottom: 50px;
+    padding: 0 0px;
+   left: 40px;
+   
+  }
+}
+
+@include respond-above-portrait (md) {
+  .textAnimationWrapper {
+    width: 100vw;
+   bottom: 55px;
+    // left: 40px;
+   
+  }
+}
+
+@include respond-above(lg) {
+  .textAnimationWrapper {
+    left: 48px;
+  }
+}
+
+@include respond-above(mac) {
+  .textAnimationWrapper {
+    left: 60px;
+  }
+}
+
+@include respond-above(xlg) {
+  .textAnimationWrapper {
+    left: calc(50% - 725px);
+  }
+}
+
+@include respond-above(fhd) {
+  .textAnimationWrapper {
+    left: calc(50% - 736px);
+   
+  }
+}
+
+@include respond-above(qhd) {
+  .textAnimationWrapper {
+    left: calc(50% - 888px);
+  }
+}
+
+@media screen and (min-aspect-ratio: 22/9) and (max-aspect-ratio: 100/10), (min-width:667px) and (max-width:700px){
+  .textAnimationWrapper {
+   display: none;
+  }
+}

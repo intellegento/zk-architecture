@@ -1,0 +1,13 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.line {
+    height: 1px;
+    width: 100%;
+    position: relative;
+    top: -70px;
+    background-color: transparent;
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
+}
+    

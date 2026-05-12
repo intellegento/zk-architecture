@@ -1,0 +1,69 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #fff;
+
+  /* кнопки языка */
+  &__item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -4%;
+
+
+    opacity: 0.5;
+    transition: opacity 0.25s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  /* активный язык */
+  &__active {
+    opacity: 1;
+    font-weight: 600;
+    pointer-events: none; // ← нельзя нажать на активный язык
+    cursor: default;
+  }
+
+  /* разделитель */
+  &__separator {
+    opacity: 0.4;
+    user-select: none;
+    font-size: 16px;
+  }
+}
+
+@include respond-above(md) {
+    .switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #fff;
+  font-size: 24px;
+
+  /* кнопки языка */
+  &__item {
+    font-size: 24px;
+  }
+
+  &__separator {
+    opacity: 0.4;
+    user-select: none;
+    font-size: 24px !important;
+  }
+}
+}

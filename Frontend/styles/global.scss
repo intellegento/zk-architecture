@@ -1,0 +1,303 @@
+@import "varibles";
+@import "mixins";
+@import "typography";
+@import "~sanitize.css";
+@import "~sanitize.css/forms.css";
+@import "default";
+@import "cursor";
+@import "~@splidejs/splide/dist/css/splide.min.css";
+// @import '@splidejs/react-splide/css/core';
+// @import '@splidejs/react-splide/css';
+
+body {
+  background-color: #1d1d21;
+}
+:root {
+  --light: #f5f5f5;
+  --dark: #1d1d21;
+}
+
+html {
+  --header-height: 40px;
+  --header-offset: 40px;
+  --header-compensation: -40px;
+  --container-offset: #{$container};
+  --app-height: 100vh;
+  --app-height: -webkit-fill-available;
+  --section-height: calc(100vh - 40px);
+  background-color: #1d1d21;
+
+  @include respond-above(md) {
+    --container-offset: #{$containerMD};
+  }
+
+  @include respond-above(mac) {
+    --header-height: 80px;
+    --header-offset: 80px;
+    --header-compensation: -60px;
+    --container-offset: #{$containerMAC};
+    --app-height: 100vh;
+    --section-height: calc(100vh - 80px);
+  }
+
+  @include respond-above(xlg) {
+    --header-height: 63.6px;
+    --header-offset: 63.6px;
+    --header-compensation: -63.6px;
+    --section-height: calc(100vh - 63.6px);
+    --container-offset: #{$containerXLG};
+  }
+  @include respond-above(xlg) {
+    --header-height: 63.6px;
+    --header-offset: 63.6px;
+    --header-compensation: -63.6px;
+    --section-height: calc(100vh - 63.6px);
+    --container-offset: #{$containerXLG};
+  }
+  @include respond-above(fhd) {
+    --header-height: 67.2px;
+    --header-offset: 67.2px;
+    --header-compensation: -67.2px;
+    --section-height: calc(100vh - 67.2px);
+    --container-offset: #{$containerFHD};
+  }
+
+  @include respond-above(fhd-plus) {
+    --header-height: 72px;
+    --header-offset: 72px;
+    --header-compensation: -72px;
+    --container-offset: #{$containerFHD};
+    --section-height: calc(100vh - 72px);
+  }
+
+  @include respond-above(qhd) {
+    --header-height: 78px;
+    --header-offset: 78px;
+    --header-compensation: -78px;
+    --container-offset: #{$containerQHD};
+    --section-height: calc(100vh - 78px);
+  }
+}
+.typingBureau {
+  display: none;
+}
+
+.textTypingVisible {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@include respond-above(md) {
+  .typingBureau {
+    display: flex;
+  }
+  .projectsPageTyping {
+    display: none;
+  }
+}
+
+@include respond-above-portrait(md) {
+  // .projectsPageTyping {
+  //   display: none;
+  // }
+}
+
+@include respond-above(mac) {
+  html {
+    // overflow-y: scroll;
+    // scroll-snap-type: y mandatory;
+    // scroll-behavior: none;
+    // overscroll-behavior-y: none;
+    // overflow: scroll;
+  }
+
+  .snapSection {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+section {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 $container;
+  margin: 0 auto;
+
+  @include respond-above(xs) {
+    padding: 0 $containerXS;
+  }
+
+  @include respond-above(sm) {
+    padding: 0 $containerSM;
+  }
+
+  @include respond-above(md) {
+    padding: 0 $containerMD;
+  }
+
+  @include respond-above(lg) {
+    padding: 0 $containerLG;
+  }
+
+  @include respond-above(mac) {
+    padding: 0 $containerMAC;
+  }
+
+  @include respond-above(xlg) {
+    padding: 0 $containerXLG;
+  }
+
+  @include respond-above(fhd) {
+    padding: 0 $containerFHD;
+  }
+
+  @include respond-above(qhd) {
+    padding: 0 $containerQHD;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+.splide {
+  &__sr {
+    display: none;
+  }
+}
+
+body {
+  font-family: "Inter-Light";
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  color: $defaultTextColor;
+  background-color: #f5f5f5;
+  //  overflow: hidden;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+}
+
+main {
+  position: relative;
+  flex: 1 0 auto;
+  display: flex !important;
+  flex-direction: column;
+  z-index: 1;
+  pointer-events: auto;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: $defaultLinkColor;
+  cursor: none;
+}
+
+::selection {
+  color: $selectionTextColor;
+  text-shadow: none;
+}
+
+.no-pointer {
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Splide
+// .splide__track {
+//   overflow: visible !important;
+// }
+
+#loader-lottie__wrapper {
+  width: 100%;
+  height: 100% !important;
+}
+
+.changeBackgroundColor {
+  background: var(--light);
+  height: auto;
+  position: relative;
+}
+
+.projectSectionHover {
+  mix-blend-mode: normal !important;
+  color: black;
+}
+
+.forScrollDown {
+  position: relative;
+}
+
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+  touch-action: none;
+}
+
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,15 @@
+export const en = {
+  typing_text: "Architectural Bureau",
+  nav_about: "About",
+  menu_mob_typing: "Menu",
+  menuBtn: "[Menu]",
+  menuBtnCls: "[Close]",
+  bureau: "bureau",
+  projects: "projects",
+  services: "services",
+  contacts: "contacts",
+  viewCursor: "view",
+  comingSoonCursor: "coming soon",
+  prevProject: "Go back",
+  nextProject: "Next",
+}

@@ -1,0 +1,253 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.disabled {
+  opacity: 0.2;
+}
+
+.offButton {
+  width: 0 !important;
+}
+
+.planingSolutionSection {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 70px;
+
+  &__splide {
+    display: flex;
+    flex-direction: row;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+  }
+
+  &__titleMob,
+  &__titleSlider {
+    // display: none;
+    h3 {
+      font-family: "Inter";
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: -0.04em;
+      text-align: left;
+    }
+  }
+  &__navigation {
+    &__arrowPrev {
+      margin-right: 20px;
+      transform: scale(-1, 1);
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    height: auto;
+    
+
+    img {
+      width: 100%;
+      height: 64vw;
+      max-height: 600px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__photo {
+      &__prev,
+      &__next {
+        display: none;
+      }
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .planingSolutionSection {
+    &__slide {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .planingSolutionSection {
+    &__header {
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #000;
+    }
+
+    &__titleMob,
+    &__titleSlider {
+      // display: none;
+      h3 {
+        font-size: 26px;
+      }
+    }
+
+    &__splide {
+      margin-bottom: 0;
+    }
+
+    &__slide {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+@include respond-above(md) {
+  .planingSolutionSection {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 150px;
+
+    &__splide {
+      order: 2;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin-bottom: 0;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    &__header {
+      display: none;
+    }
+
+    &__navigation {
+      &__arrowPrev {
+        margin-right: 20px;
+        transform: scale(-1, 1);
+      }
+    }
+
+    &__slide {
+      // aspect-ratio: 1.7368;
+      margin-bottom: 0px;
+      width: auto;
+
+      img {
+        height: 64vw;
+        max-height: 85vh;
+      }
+
+      &__photo {
+        &__prev,
+        &__next {
+          display: flex;
+          position: absolute;
+          z-index: 999;
+        }
+
+        &__prev {
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 30%;
+        }
+
+        &__next {
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(mac) {
+  .planingSolutionSection {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 200px;
+
+    &__splide {
+      order: 2;
+      display: flex;
+      flex-direction: row;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    &__navigation {
+      &__arrowPrev {
+        margin-right: 20px;
+        transform: scale(-1, 1);
+      }
+    }
+
+    &__slide {
+
+      img {
+        height: 56vw;
+        max-height: 92vh;
+      }
+
+    }
+
+  }
+}
+
+@include respond-above(xlg) {
+  .planingSolutionSection {
+
+      &__container {
+        width: 100%;
+        max-width: 1450px;
+        margin: 0 auto;
+      }
+  }
+}
+
+@include respond-above(fhd) {
+  .planingSolutionSection {
+    margin-bottom: 200px;
+    &__container {
+      max-width: calc(1600px - 128px);
+    }
+    &__slide {
+      img {
+        height: 45vw;
+        max-height: 85vh;
+      }
+    }
+   
+  }
+}
+
+@include respond-above(qhd) {
+  .planingSolutionSection {
+    margin-bottom: 250px;
+    &__container {
+      max-width: calc(1920px - 144px);
+    }
+  }
+}

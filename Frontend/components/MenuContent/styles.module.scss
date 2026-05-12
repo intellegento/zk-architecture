@@ -1,0 +1,268 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+@keyframes linkHovered {
+  0% {
+    width: 0;
+   left: 0;
+   opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    left: 0;
+    width: 100%;
+  }
+  50% {
+    right: 0;
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    right: 0;
+    width: 0%;
+    opacity: 0;
+  }
+}
+
+.menuContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1d1d21;
+  width: 100vw;
+  height: calc(100vh + 1px);
+  min-height: calc(100vh + 1px);
+  animation-duration: 0.3s;
+  padding: 115px 20px;
+  z-index: 998;
+  transition: transform 0.3s ease-out;
+
+  &__container {
+    width: 100%;
+    display: flex;
+  flex-direction: column;
+
+  }
+
+  &__typeSection {
+    position: absolute;
+    bottom: 60px;
+    color: #fff;
+
+    span {
+      font-family: "Inter-Light";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.04em;
+      text-align: center;
+    }
+  }
+
+  //&__open {
+  //  animation-name: menuContentOpen;
+  //}
+  //
+  //@keyframes menuContentOpen {
+  //  0% {
+  //    opacity: 0;
+  //    transform: translateY(-100vh);
+  //  }
+  //
+  //  100% {
+  //    opacity: 1;
+  //    transform: translateY(0);
+  //  }
+  //}
+
+  &__closing {
+    //animation-name: menuContentClose;
+    transition: transform 0.3s, opacity 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+
+  //@keyframes menuContentClose {
+  //  100% {
+  //    opacity: 1;
+  //    transform: translateY(0);
+  //  }
+  //
+  //  0% {
+  //    opacity: 0;
+  //    transform: translateY(-100vh);
+  //  }
+  //}
+
+  a {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 120%;
+    height: 60px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    width: fit-content;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-color: #fff;
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      width: 100%;
+      bottom: 0;
+      height: 3px;;
+      transition: all .3s;
+    }
+
+    &:hover {
+      &::after {
+       animation: linkHovered 2s infinite;
+       opacity: 1;
+      }
+    }
+  }
+}
+
+@include  respond-above(xs) {
+  .menuContent {
+    padding: 115px 24px;
+
+    &__typeSection {
+      bottom: 40px;
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .menuContent {
+    padding: 105px 30px;
+
+    a {
+      font-size: 57px;
+      height: auto;
+    }
+  }
+}
+@include respond-above-portrait (sm) {
+  .menuContent {
+    padding: 210px 30px;
+
+    a {
+      font-size: 57px;
+      height: auto;
+    }
+  }
+}
+
+@include respond-above(md) {
+  .menuContent {
+    padding: 90px 40px;
+
+    &__typeSection {
+      span {
+        line-height: 120%;
+      }
+    }
+
+    a {
+      font-size: 52px;
+    }
+  }
+}
+
+@include respond-above-portrait (md) {
+  .menuContent {
+    padding: 230px 40px;
+
+    a {
+      font-size: 57px;
+      height: auto;
+    }
+  }
+}
+
+@include  respond-above(lg) {
+  .menuContent {
+    padding: 100px 48px;
+
+   
+
+    a {
+      font-size: 55px;
+    }
+  }
+}
+
+@include respond-above(mac) {
+  .menuContent {
+    padding: 15vh 60px;
+
+    a {
+      font-size: 76px;
+    }
+  }
+}
+
+@include respond-above(xlg) {
+  .menuContent {
+    &__container {
+      max-width: 1450px;
+      margin: 0 auto;
+      // left: calc(50% - 600px);
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .menuContent {
+    padding: 20vh 72px;
+
+    &__container {
+      max-width: calc(1600px - 120px);
+    }
+
+    &__typeSection {
+  
+      span {
+        font-size: 20px;
+      }
+    }
+   
+
+    a {
+      font-size: 82px;
+      line-height: 130%;
+    }
+  }
+}
+
+@include respond-above(qhd) {
+  .menuContent {
+    padding: 20vh 80px;
+
+    &__container {
+      max-width: calc(1920px - 144px);
+    }
+
+    a {
+      font-size: 96px;
+    }
+  }
+}
+
+// @media screen and (min-aspect-ratio: 22/9) and (max-aspect-ratio: 100/10), (min-width:667px) and (max-width:700px) {
+//   .menuContent {
+//     &__typeSection {
+//       display: none;
+//     }
+//     padding-top: 90px;
+//     a {
+//       font-size: 10vh;
+//     }
+//   }
+// }

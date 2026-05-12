@@ -1,0 +1,36 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.animatedText {
+    position: fixed;
+    left: 0px;
+    bottom: 50px;
+    height: 2rem;
+    z-index: 9;
+    display: flex;
+    flex-direction: row;
+    
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // margin-right: 25px;
+        overflow: hidden;
+    }
+}
+
+@include respond-above(mac) {
+    .animatedText {
+        position: fixed;
+        z-index: 0;
+        display: flex;
+        flex-direction: row;
+        
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.changeableText {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+
+  span {
+    font-family: "Inter-Light";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -0.04em;
+    text-align: center;
+
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    position: relative;
+    color: #000;
+  }
+}
+
+@include respond-above(sm) {
+  .changeableText {
+    padding-left: 24px;
+    
+  }
+}
+
+@include respond-above(md) {
+  .changeableText {
+    padding-left: 36px;
+    span {
+      font-size: 18px;
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .changeableText {
+    padding-left: 48px;
+  }
+}
+
+@include respond-above(mac) {
+  .changeableText {
+    padding-left: 60px;
+    span {
+      font-size: 16px;
+    }
+  }
+}
+@include respond-above(xlg) {
+  .changeableText {
+    padding-left: 64px;
+    
+  }
+}
+
+@include respond-above(fhd) {
+  .changeableText {
+    padding-left: 72px;
+    
+  }
+}
+
+@include respond-above(ghd) {
+  .changeableText {
+    padding-left: 80px;
+    
+  }
+}

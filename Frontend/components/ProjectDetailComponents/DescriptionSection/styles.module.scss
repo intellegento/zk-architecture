@@ -1,0 +1,110 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.offButton {
+  width: 0 !important;
+}
+
+.descriptionSection {
+  margin-bottom: 70px;
+
+  &__wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-top: 1px solid #7B7B7D;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #7B7B7D;
+
+    &__info, 
+    &__title{
+      p {
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 110%;
+        letter-spacing: -4%;
+        text-align: justify;
+        text-transform: uppercase;
+        
+      }
+    }
+
+    &__title {
+      p {
+        color: #8C8C8C;
+      }
+    }
+  }
+}
+
+
+@include respond-above(md) {
+  .descriptionSection {
+    margin-bottom: 150px;
+  
+   
+  }
+}
+
+@include respond-above(lg) {
+  .descriptionSection {
+
+    &__item {
+  
+      &__info, 
+      &__title{
+        p {
+          font-size: 16px;
+          
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(mac) {
+  .descriptionSection {
+    margin-bottom: 200px;
+  }
+}
+
+@include respond-above(xlg) {
+  .descriptionSection {
+    &__wrap {
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+
+   
+  }
+}
+
+@include respond-above(fhd) {
+  .descriptionSection {
+
+    &__wrap {
+      max-width: calc(1600px - 128px);
+    }
+  }
+}
+
+@include respond-above(qhd) {
+  .descriptionSection {
+    &__wrap {
+      max-width: calc(1920px - 144px);
+    }
+
+  }
+}

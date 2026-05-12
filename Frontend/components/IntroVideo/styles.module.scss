@@ -1,0 +1,148 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+@keyframes scrolldown {
+  0% {
+    transform: rotate(45deg);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(0%) rotate(45deg);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: rotate(45deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    border-color: #fff;
+  }
+  25% {
+    border-color: #9BFFB1;
+  }
+  50% {
+    border-color: rgb(0, 255, 0);
+  }
+  75% {
+    border-color: #9BFFB1;
+  }
+  100% {
+    border-color: #fff;
+  }
+}
+
+.videoContainer {
+  margin: 0;
+  // min-height: var(--app-height);
+  // max-height: 100vh;
+  height: calc(100vh - 1px);
+  height: var(--app-height);
+  width: 100vw;
+  overflow: hidden;
+  // position: relative;
+  background-color: #1D1D21;
+  position: relative;
+
+ 
+
+
+  video {
+    // position: absolute;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  // z-index: -1;
+  top: 0;
+  }
+
+ 
+}
+
+
+@include respond-above(sm) {
+  .videoContainer {
+    height: var(--app-height);
+    height: 100vh;
+    &__bottom {
+      padding: 50px 30px;
+    }
+  }
+}
+
+@include respond-above(md) {
+  .videoContainer {
+  
+    &__bottom {
+      padding: 50px 40px;
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .videoContainer {
+  
+    &__bottom {
+      padding: 50px 48px;
+
+      &__wrapper {
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(mac) {
+  .videoContainer {
+  
+    &__bottom {
+      padding: 50px 60px;
+    }
+  }
+}
+
+@include respond-above(xlg) {
+  .videoContainer {
+  
+    &__bottom {
+      padding: 50px 0;
+     
+      &__wrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1450px;
+      }
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .videoContainer {
+  
+    &__bottom {
+     
+      &__wrapper {
+        max-width: 1472px;
+      }
+    }
+  }
+}
+
+@include respond-above(qhd) {
+  .videoContainer {
+  
+    &__bottom {
+      &__wrapper {
+        max-width: 1776px;
+      }
+    }
+  }
+}

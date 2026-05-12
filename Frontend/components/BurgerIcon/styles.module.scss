@@ -1,0 +1,29 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.burgerIcon {
+    // cursor: pointer;
+  }
+  
+  .burgerIcon line {
+    transition: transform 0.3s ease;
+  }
+  
+  /* Явно задаем точки вращения для каждой линии */
+  .burgerIcon line:first-of-type {
+    transform-origin: 12px 7px;
+  }
+  
+  .burgerIcon line:last-of-type {
+    transform-origin: 12px 17px;
+  }
+  
+  /* При открытом состоянии линии смещаются к центру и поворачиваются */
+  .open line:first-of-type {
+    transform: translateY(5px) rotate(45deg);
+  }
+  
+  .open line:last-of-type {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  

@@ -1,0 +1,1453 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+$section-height-small: 60vh;
+$section-height-medium: 72vh;
+$section-height-large: "auto";
+
+.transitionWrapper {
+  transition: all 0.3s ease-in-out;
+}
+
+.transitionContent {
+  // opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.projectsSectionBlack {
+  display: none;
+  position: relative;
+  height: 100vh;
+  // min-height: var(--app-height);
+  // max-height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    height: 100%;
+    @media (max-height: 700px) {
+      padding-top: 20vh;
+    }
+    @media (min-height: 700px) and (max-height: 812px) {
+      padding-top: 25vh;
+    }
+    @media (min-height: 812px) {
+      padding-top: 34vh;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    order: 2;
+
+    &__year,
+      &__category {
+        display: none;
+      }
+
+    &__title {
+      font-family: "Inter";
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: -0.04em;
+        text-align: left;
+    }
+
+    &__right {
+      position: relative;
+      width: auto;
+
+      &:after {
+        opacity: 0;
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+        transition: all .3s;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+      button,
+      a {
+        font-family: "Inter";
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: -0.04em;
+        text-align: left;
+        position: relative;
+        // bottom: -10px;
+
+        
+      }
+    }
+
+    &__year {
+      font-family: "Inter-Light";
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: -0.04em;
+      text-align: justify;
+      margin-right: 50px;
+    }
+
+    &__category {
+      font-family: "Inter-Light";
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: -0.04em;
+      text-align: justify;
+      text-transform: uppercase;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    &__textSide {
+      display: flex;
+      flex-direction: column;
+      // padding-top: 25px;
+
+      &__infoBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 42%;
+      }
+
+      &__title {
+        font-family: "Inter";
+        font-size: 36px;
+        line-height: 120%;
+        letter-spacing: -0.04em;
+        text-align: left;
+        margin-bottom: 15px;
+        position: relative;
+        bottom: 5px;
+      }
+
+      &__description {
+        display: none;
+      }
+
+      &__info {
+        display: none;
+      }
+    }
+
+    &__imgSide {
+      width: 100%;
+      // max-width: 335px;
+      height: auto;
+      // aspect-ratio: 1 /1 ;
+      margin-bottom: 15px;
+
+      img {
+        width: 100%;
+        height: 245px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .projectsSectionBlack {
+    display: block;
+    &__header {
+      margin-bottom: 40px;
+
+      img {
+        width: 60%;
+        max-width: 20vw;
+        aspect-ratio: 1 / 1;
+        background-position: center;
+        background-size: cover;
+
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    &__main {
+      &__imgSide {
+        width: 100%;
+        height: auto;
+        img {
+          height: 35vw;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above-portrait(xs) {
+  .projectsSectionBlack {
+    &__wrapper {
+      padding-top: 22vh;
+      justify-content: initial;
+      overflow: hidden;
+      // height: 100vh;
+      position: relative;
+    }
+
+    &__header {
+      justify-content: space-between;
+      height: auto;
+      margin-bottom: 55px;
+      order: 0;
+
+      &__title {
+        font-family: "Inter";
+          font-size: 36px;
+      }
+
+      &__right {
+        button,
+        a {
+          font-size: 36px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          height: auto;
+        }
+      }
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+
+      &__textSide {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding-top: 0px;
+
+        &__infoBlock {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: initial;
+          width: 100%;
+        }
+
+        &__column {
+          width: 98%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 2px;
+        }
+
+        &__title {
+          display: none;
+          font-family: "Inter";
+          position: absolute;
+          top: -95px;
+          left: 0;
+          font-size: 48px;
+        }
+
+        &__description {
+          font-family: "Inter-Light";
+          font-size: 12px;
+          width: 485px;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 14px;
+          width: 33%;
+
+          span {
+            font-family: "Inter";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+
+          p {
+            font-family: "Inter";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+        }
+      }
+
+      &__imgSide {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: auto;
+        margin-bottom: 50px;
+
+        img {
+          width: 100vw;
+          height: 41vh;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+   
+  }
+}
+
+@include respond-above(sm) {
+  .projectsSectionBlack {
+    @media (max-height: 420px) {
+      height: auto;
+    }
+    &__wrapper {
+      @media (max-height: 420px) {
+        justify-content: initial;
+        padding-top: 1.72vw;
+      }
+      padding-bottom: 0;
+      justify-content: flex-end;
+      overflow: hidden;
+      // height: 100vh;
+    }
+
+    &__header {
+      height: auto;
+      margin-bottom: 28px;
+      order: 0;
+
+      &__left {
+        display: block;
+        width: 15%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding-bottom: 10px;
+      }
+
+      &__title {
+        display: none;
+      }
+
+      &__year,
+      &__category {
+        display: block;
+      }
+
+      &__right {
+        button,
+        a {
+          font-size: 36px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          height: auto;
+        }
+      }
+
+      &__year {
+        font-size: 12px;
+        margin-right: 50px;
+      }
+
+      &__category {
+        font-size: 12px;
+        line-height: 100%;
+      }
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+      &__textSide {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-top: 22px;
+
+        &__infoBlock {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 70%;
+        }
+
+        &__column {
+          width: 45%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__title {
+          font-family: "Inter";
+          font-size: 36px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          text-align: left;
+          margin-bottom: 38px;
+        }
+
+        &__description {
+          display: block;
+          font-family: "Inter-Light";
+          font-size: 12px;
+          line-height: 130%;
+          letter-spacing: -0.04em;
+          text-align: justify;
+          margin-bottom: 38px;
+          width: 85%;
+          opacity: .8;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 14px;
+
+          span {
+            font-family: "Inter-Light";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+
+          p {
+            font-family: "Inter-Light";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+        }
+      }
+
+      &__imgSide {
+        display: flex;
+        justify-content: flex-end;
+        width: 58%;
+        height: auto;
+        margin-bottom: 0;
+
+        img {
+          width: 100%;
+          height: 89%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+   
+  }
+}
+
+@include respond-above-portrait(sm) {
+  .projectsSectionBlack {
+    &__wrapper {
+      padding-top: 22vh;
+      justify-content: initial;
+      overflow: hidden;
+      // height: 100vh;
+      position: relative;
+    }
+
+    &__header {
+      // justify-content: end;
+      height: auto;
+      margin-bottom: 55px;
+      order: 0;
+
+      &__year,
+      &__category {
+        display: none;
+      }
+
+      &__title {
+        display: block;
+        font-size: 40px;
+      }
+
+      &__left {
+        width: auto;
+        padding-bottom: 0;
+      }
+
+
+      &__right {
+        button,
+        a {
+          font-size: 40px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          height: auto;
+        }
+      }
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+
+      &__textSide {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding-top: 0px;
+
+        &__infoBlock {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: initial;
+          width: 100%;
+        }
+
+        &__column {
+          width: 98%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 2px;
+        }
+
+        &__title {
+          font-family: "Inter";
+          position: absolute;
+          top: -95px;
+          left: 0;
+          font-size: 48px;
+        }
+
+        &__description {
+          font-family: "Inter-Light";
+          font-size: 12px;
+          width: 485px;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 14px;
+          width: 33%;
+
+          span {
+            font-family: "Inter";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+
+          p {
+            font-family: "Inter";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+        }
+      }
+
+      &__imgSide {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: auto;
+        margin-bottom: 50px;
+
+        img {
+          width: 100vw;
+          height: 41vh;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+   
+  }
+}
+
+@include respond-above(md) {
+  .projectsSectionBlack {
+    &__wrapper {
+      padding-top: 9.72vw;
+      padding-bottom: 0;
+      justify-content: flex-start;
+      overflow: hidden;
+      // height: 100vh;
+      min-height: 700px;
+    }
+
+    &__header {
+      height: auto;
+      margin-bottom: 28px;
+      order: 0;
+
+      img {
+        display: none;
+
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+
+      &__left {
+        display: block;
+        width: 15%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+      }
+
+      &__right {
+        button,
+        a {
+          font-size: 44px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          height: 55px;
+        }
+      }
+
+      &__year {
+        font-size: 12px;
+        margin-right: 50px;
+      }
+
+      &__category {
+        font-size: 12px;
+        line-height: 100%;
+      }
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+      &__textSide {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-top: 22px;
+
+        &__infoBlock {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 50%;
+        }
+
+        &__column {
+          width: 45%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__title {
+          font-family: "Inter";
+          font-size: 44px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          text-align: left;
+          margin-bottom: 38px;
+        }
+
+        &__description {
+          display: block;
+          font-family: "Inter-Light";
+          font-size: 12px;
+          line-height: 130%;
+          letter-spacing: -0.04em;
+          text-align: justify;
+          margin-bottom: 38px;
+          width: 65%;
+          opacity: 0.8;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 14px;
+
+          span {
+            font-family: "Inter-Light";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: 0.8;
+          }
+
+          p {
+            font-family: "Inter-Light";
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.04em;
+            opacity: 0.8;
+          }
+        }
+      }
+
+      &__imgSide {
+        display: flex;
+        justify-content: flex-end;
+        width: 49.5%;
+        height: 100%;
+        margin-bottom: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above-portrait(md) {
+  .projectsSectionBlack {
+    &__wrapper {
+      padding-top: 22vh;
+      justify-content: initial;
+      overflow: hidden;
+      // height: 100vh;
+      position: relative;
+    }
+
+    &__header {
+      height: auto;
+      margin-bottom: 43px;
+      order: 0;
+
+      &__year,
+      &__category {
+        display: none;
+      }
+
+      &__title {
+        display: block;
+        font-size: 64px;
+      }
+
+      &__left {
+        width: auto;
+        padding-bottom: 0;
+      }
+
+      &__right {
+        width: auto;
+        position: relative;
+        button,
+        a {
+          font-size: 64px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          height: 55px;
+          
+        }
+      }
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+
+      &__textSide {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding-top: 22px;
+
+        &__infoBlock {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: initial;
+          width: 70%;
+        }
+
+        &__column {
+          width: 75%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 13px;
+        }
+
+        &__title {
+          position: absolute;
+          top: -120px;
+          left: 0;
+          font-size: 64px;
+        }
+
+        &__description {
+          font-family: "Inter-Light";
+          font-size: 16px;
+          width: 485px;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 14px;
+          width: 33%;
+
+          span {
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+
+          p {
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+        }
+      }
+
+      &__imgSide {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: auto;
+        margin-bottom: 3vh;
+
+        img {
+          width: 100vw;
+          height: 47vh;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+   
+  }
+}
+
+@include respond-above(lg) {
+  .projectsSectionBlack {
+    &__wrapper {
+      padding-top: 6.72vw;
+    }
+
+    &__header {
+      margin-bottom: 30px;
+
+      &__year {
+        font-size: 13px;
+        margin-right: 50px;
+      }
+
+      &__category {
+        font-size: 13px;
+      }
+    }
+
+    &__main {
+      &__textSide {
+        padding-top: 25px;
+
+        &__title {
+          font-size: 44px;
+          margin-bottom: 40px;
+        }
+
+        &__description {
+          font-size: 13px;
+          margin-bottom: 40px;
+        }
+
+        &__info {
+          margin-bottom: 14px;
+
+          span,
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+
+      &__imgSide {
+        width: 47%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above-portrait(lg) {
+  .projectsSectionBlack {
+    &__wrapper {
+      padding-top: 22vh;
+      justify-content: initial;
+      overflow: hidden;
+      // height: 100vh;
+      position: relative;
+    }
+
+    &__header {
+      height: auto;
+      margin-bottom: 43px;
+      order: 0;
+
+      &__year,
+      &__category {
+        display: none;
+      }
+
+      &__title {
+        display: block;
+        font-size: 64px;
+      }
+
+      &__left {
+        width: auto;
+        padding-bottom: 0;
+      }
+
+      &__right {
+        width: auto;
+        position: relative;
+        button,
+        a {
+          font-size: 64px;
+          line-height: 100%;
+          letter-spacing: -0.04em;
+          height: 55px;
+          
+        }
+      }
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+
+      &__textSide {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding-top: 22px;
+
+        &__infoBlock {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: initial;
+          width: 70%;
+        }
+
+        &__column {
+          width: 75%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 13px;
+        }
+
+        &__title {
+          position: absolute;
+          top: -120px;
+          left: 0;
+          font-size: 64px;
+        }
+
+        &__description {
+          font-family: "Inter-Light";
+          font-size: 16px;
+          width: 485px;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 14px;
+          width: 33%;
+
+          span {
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+
+          p {
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            opacity: .8;
+          }
+        }
+      }
+
+      &__imgSide {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: auto;
+        margin-bottom: 3vh;
+
+        img {
+          width: 100vw;
+          height: 47vh;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+   
+  }
+}
+
+@include respond-above(mac) {
+  .projectsSectionBlack {
+    &__wrapper {
+      height: auto;
+      min-height: var(--app-height);
+      max-height: 900px;
+    }
+    &__header {
+      margin-bottom: 4.5vh;
+
+      &__right {
+        button,
+        a {
+          font-size: 64px;
+          line-height: 100%;
+          height: 64px;
+        }
+      }
+
+      &__year {
+        font-size: 14px;
+        margin-right: 50px;
+      }
+
+      &__category {
+        font-size: 14px;
+      }
+    }
+
+    &__main {
+      @media (max-height: 600px) {
+        height: $section-height-small;
+      }
+
+      @media (min-height: 600px) and (max-height: 900px) {
+        height: $section-height-medium;
+      }
+
+      @media (min-height: 900px) {
+        height: 72vh;
+      }
+
+      &__textSide {
+        padding-top: 14px;
+
+        &__title {
+          font-size: 64px;
+          line-height: 120%;
+          margin-bottom: 7.2vh;
+        }
+
+        &__description {
+          font-size: 16px;
+          margin-bottom: 7vh;
+        }
+
+        &__info {
+          margin-bottom: 17px;
+          span {
+            margin-bottom: 3px;
+          }
+          span,
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+      &__imgSide {
+        width: 49.5%;
+        div {
+          width: 100%;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    @media (max-height: 600px) {
+      &__wrapper {
+        max-height: 600px;
+        padding-top: 13vh;
+      }
+      &__header {
+        margin-bottom: 0;
+      }
+
+      &__main {
+          height: 77vh;
+  
+        &__textSide {
+          padding-top: 10px;
+  
+          &__title {
+            font-size: 64px;
+            line-height: 120%;
+            margin-bottom: 3vh;
+          }
+  
+          &__description {
+            font-size: 16px;
+            margin-bottom: 3vh;
+          }
+        }
+      }
+    }
+
+    @media (min-height: 600px) and (max-height: 900px) {
+      &__wrapper {
+        max-height: 900px;
+        padding-top: 15vh;
+      }
+      &__header {
+        margin-bottom: 2vh;
+      }
+
+      &__main {
+          height: 80vh;
+  
+        &__textSide {
+          padding-top: 10px;
+  
+          &__title {
+            margin-bottom: 4vh;
+          }
+  
+          &__description {
+            margin-bottom: 4vh;
+          }
+        }
+      }
+    }
+
+    @media (min-height: 900px) {
+      &__wrapper {
+        max-height: 900px;
+        padding-top: 17vh;
+      }
+      &__header {
+        margin-bottom: 4.5vh;
+      }
+  
+      &__main {
+  
+        &__textSide {
+          padding-top: 14px;
+  
+          &__title {
+            margin-bottom: 7.2vh;
+          }
+  
+          &__description {
+            margin-bottom: 7vh;
+          }
+        }
+      }
+    }
+    }
+  
+}
+
+@include respond-above(xlg) {
+  .projectsSectionBlack {
+    &__wrapper {
+      width: auto;
+      margin: 0 auto;
+      max-width: 1450px;
+    }
+    &__header {
+      margin-bottom: 42px;
+
+      &__right {
+        button,
+        a {
+          font-size: 64px;
+          height: 70px;
+        }
+      }
+
+      &__year {
+        font-size: 18px;
+        line-height: 100%;
+        margin-right: 70px;
+      }
+
+      &__category {
+        font-size: 18px;
+        line-height: 100%;
+      }
+    }
+
+    &__main {
+      @media (max-height: 650px) {
+        height: $section-height-small;
+      }
+
+      @media (min-height: 650px) and (max-height: 900px) {
+        height: $section-height-medium;
+      }
+
+      @media (min-height: 900px) {
+        height: 72vh;
+      }
+      &__textSide {
+        &__title {
+          font-size: 64px;
+          margin-bottom: 50px;
+        }
+
+        &__description {
+          font-size: 18px;
+          margin-bottom: 60px;
+          width: 70%;
+        }
+
+        &__info {
+          span,
+          p {
+            font-size: 18px;
+            line-height: 100%;
+          }
+        }
+      }
+
+      &__imgSide {
+        width: 49%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .projectsSectionBlack {
+    &__wrapper {
+      max-width: calc(1600px - 128px);
+
+      @media (max-height: 750px) {
+        padding-top: 10vh;
+        justify-content: inherit;
+      }
+
+      @media (min-height: 900px) and (max-height: 1080px) {
+        padding-top: 15vh;
+        justify-content: inherit;
+      }
+
+      @media (min-height: 1080px) {
+        padding-top: 20vh;
+        justify-content: inherit;
+      }
+      height: auto;
+      max-height: 1080px;
+      min-height: var(--app-height);
+      // min-height: 760px;
+    }
+
+    &__header {
+      margin-bottom: 65px;
+
+      &__right {
+        button,
+        a {
+          font-size: 72px;
+          height: 80px;
+        }
+      }
+    }
+
+    &__main {
+      @media (max-height: 750px) {
+        height: $section-height-small;
+      }
+
+      @media (min-height: 750px) and (max-height: 1080px) {
+        height: $section-height-medium;
+      }
+
+      @media (min-height: 1080px) {
+        height: $section-height-medium;
+      }
+      &__textSide {
+        &__infoBlock {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 42%;
+        }
+
+        &__title {
+          font-size: 72px;
+          margin-bottom: 60px;
+        }
+
+        &__description {
+          margin-bottom: 65px;
+          width: 70%;
+        }
+      }
+
+      
+    }
+  }
+}
+
+@include respond-above(qhd) {
+  .projectsSectionBlack {
+    &__wrapper {
+      max-width: calc(1920px - 144px);
+      @media (max-height: 1100px) {
+        padding-top: 10vh;
+        justify-content: inherit;
+      }
+
+      @media (min-height: 1100px) and (max-height: 1250px) {
+        padding-top: 15vh;
+        justify-content: inherit;
+      }
+
+      @media (min-height: 1250px) {
+        padding-top: 22.5vh;
+        justify-content: inherit;
+      }
+
+      // padding-top: 20vh;
+      max-height: 100vh;
+      height: auto;
+      min-height: var(--app-height);
+    }
+    &__header {
+      margin-bottom: 80px;
+
+      &__right {
+        button,
+        a {
+          font-size: 82px;
+        }
+      }
+
+      &__year {
+        font-size: 24px;
+        margin-right: 90px;
+      }
+
+      &__category {
+        font-size: 24px;
+      }
+    }
+
+    &__main {
+      height: 100%;
+      &__textSide {
+        &__infoBlock {
+          width: 42%;
+        }
+
+        &__column {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__title {
+          font-size: 90px;
+          margin-bottom: 80px;
+        }
+
+        &__description {
+          font-size: 24px;
+          width: 72%;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 15px;
+
+          span {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

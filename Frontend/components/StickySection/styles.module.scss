@@ -1,0 +1,55 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.stickyContainer {
+  position: relative;
+  width: 100%;
+
+  &__sticky {
+    position: sticky;
+  }
+
+  &_sticky {
+    height: calc(100vh);
+    // margin-bottom: calc((200vh) * -1);
+
+    .stickyContainer__sticky {
+      position: sticky;
+      top: var(--header-height);
+    }
+
+    &.stickyContainer_first {
+      .stickyContainer__sticky {
+        top: 0;
+      }
+    }
+  }
+}
+
+
+@include respond-above(md) {
+  .stickyContainer {
+    position: relative;
+    width: 100%;
+  
+    &__sticky {
+      position: relative;
+    }
+  
+    &_sticky {
+      height: calc(200vh);
+      // margin-bottom: calc((00vh) * -1);
+  
+      .stickyContainer__sticky {
+        position: sticky;
+        top: var(--header-height);
+      }
+  
+      &.stickyContainer_first {
+        .stickyContainer__sticky {
+          top: 0;
+        }
+      }
+    }
+  }
+}

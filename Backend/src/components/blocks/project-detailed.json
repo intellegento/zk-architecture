@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_blocks_project_detaileds",
+  "info": {
+    "displayName": "projectDetailed",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.project-architecture-media"
+    },
+    "sliderImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.project-media"
+    },
+    "top": {
+      "type": "boolean",
+      "default": false
+    },
+    "sliderTitle": {
+      "type": "string"
+    }
+  }
+}

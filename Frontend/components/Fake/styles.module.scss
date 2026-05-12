@@ -1,0 +1,9 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.fake {
+    height: 100vh;
+    background: grey;
+
+    // margin-bottom: 100vh;
+}

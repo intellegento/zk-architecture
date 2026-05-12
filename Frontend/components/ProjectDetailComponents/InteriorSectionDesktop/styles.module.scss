@@ -1,0 +1,85 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.interiorSectionDesktop {
+  display: none;
+}
+
+@include respond-above(mac) {
+  .interiorSectionDesktop {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 100px;
+  
+    &__splide {
+      display: flex;
+      flex-direction: row;
+  
+      ul {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  
+    &__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #000;
+    }
+  
+    &__title {
+      h3 {
+        font-family: "Inter";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.04em;
+        text-align: left;
+      }
+    }
+  
+    &__navigation {
+      &__arrowPrev {
+        margin-right: 20px;
+        transform: scale(-1, 1);
+      }
+    }
+
+    &__splide {
+        margin-bottom: 70px;
+    }
+  
+    &__slide {
+      min-width: 335px;
+    max-width: 75vw;
+    width: 100%;
+  
+      &__photo {
+        margin-bottom: 15px;
+  
+        img {
+          height: 240px;
+          max-height: 66vh;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    &__description {
+        p {
+            font-family: "Inter-Light";
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            text-align: justify;
+
+        }
+    }
+  }
+}

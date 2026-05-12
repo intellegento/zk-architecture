@@ -1,0 +1,67 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+
+.interiorSectionMob {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 70px;
+
+    &__title {
+      margin-bottom: 15px;
+      h3 {
+        font-family: "Inter";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.04em;
+        text-align: left;
+      }
+    }
+
+    &__description {
+      margin-bottom: 70px;
+        p {
+            font-family: "Inter-Light";
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            text-align: justify;
+
+        }
+    }
+
+    &__imagesBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        &__first,
+        &__second,
+        &__third,
+        &__fourth {
+          width: 100%;
+          height: 240px;
+          margin-bottom: 10px;
+    
+          img {
+            object-fit: cover;
+            object-position: center;
+          }
+      }
+      &__fourth {
+        margin-bottom: 0;
+      }
+    }
+  }
+.interiorSectionDesktop {
+  display: none;
+}
+
+@include respond-above(mac) {
+  .interiorSectionMob {
+    display: none;
+  }
+}

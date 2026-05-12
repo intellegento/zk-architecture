@@ -1,0 +1,30 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.logo {
+  z-index: 99;
+  mix-blend-mode: difference;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@include respond-above(mac) {
+  .logo {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .logo {
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.goBackButton, .goNextButton {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__arrow {
+    display: flex;
+    margin-right: 10px;
+    height: 9px;
+
+    svg {
+      width: 13px;
+      height: 6px;
+    }
+
+    &_next {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+.goNextButton {
+  margin: 30px 0px;
+}
+@include respond-above(md) {
+  .goBackButton {
+    span {
+      font-size: 10px;
+    }
+
+    &__arrow {
+      margin-right: 10px;
+      height: 10px;
+
+      svg {
+        width: 16px;
+        height: 6px;
+      }
+    }
+  }
+  
+}
+
+@include respond-above(mac) {
+  .goBackButton {
+    span {
+      font-size: 10px;
+    }
+
+    &__arrow {
+      margin-right: 10px;
+      height: 10px;
+
+      svg {
+        width: 16px;
+        height: 6px;
+      }
+    }
+  }
+  .goNextButton {
+    margin-bottom: 100px;
+  }
+}
+
+@include respond-above(xlg) {
+  .goBackButton {
+    span {
+      font-size: 11px;
+    }
+
+    &__arrow {
+      margin-right: 11px;
+      height: 11px;
+
+      svg {
+        width: 17.6px;
+        height: 6.6px;
+      }
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .goBackButton {
+    span {
+      font-size: 13px;
+    }
+
+    &__arrow {
+      margin-right: 13px;
+      height: 13px;
+
+      svg {
+        width: 20.8px;
+        height: 7.8px;
+      }
+    }
+  }
+}
+
+@include respond-above(fhd-plus) {
+  .goBackButton {
+    span {
+      font-size: 16.25px;
+    }
+
+    &__arrow {
+      margin-right: 16.25px;
+      height: 16.25px;
+
+      svg {
+        width: 26px;
+        height: 9.75px;
+      }
+    }
+  }
+}
+
+@include respond-above(qhd) {
+  .goBackButton {
+    span {
+      font-size: 17.7px;
+    }
+
+    &__arrow {
+      margin-right: 17.7px;
+      height: 17.7px;
+
+      svg {
+        width: 28.32px;
+        height: 10.62px;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.collapse {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: auto;
+}

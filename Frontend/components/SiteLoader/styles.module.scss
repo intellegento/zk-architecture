@@ -1,0 +1,140 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+// @-webkit-keyframes fadeOutLogo {
+//   0% {
+//     opacity: 1;
+//   }
+//   75% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes fadeOutLogo {
+//   0% {
+//     opacity: 1;
+//   }
+//   75% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+
+// .hidden {
+//   animation: fadeOut 2.5s ease-in-out forwards;
+// }
+
+// @-webkit-keyframes fadeOut {
+//   from {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+//   50% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+//   60% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+//   to {
+//     opacity: 0;
+//     transform: translateY(-200vh);
+//     display: none;
+//   }
+
+// }
+
+// @keyframes fadeOut {
+//   from {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+//   50% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+
+//   80% {
+//     opacity: 0;
+//     transform: translateY(0);
+//   }
+//   to {
+//     opacity: 0;
+//     transform: translateY(-100vh);
+//     display: none;
+//   }
+
+// }
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #1D1D21;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 1.5s ease;
+
+  &__typing {
+    font-size: 24px;
+    font-weight: 400;
+    color: #F5F5F5;
+    font-family: "Inter";
+    white-space: nowrap;
+  }
+}
+
+.whiteFade {
+  position: fixed;
+  inset: 0;
+  background-color: #F5F5F5;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pageContent {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+@include respond-above(md) {
+  .preloader {
+  
+    &__typing {
+      font-size: 36px;
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .preloader {
+  
+    &__typing {
+      font-size: 45px;
+    }
+  }
+}
+
+
+@include respond-above(fhd) {
+  .preloader {
+  
+    &__typing {
+      font-size: 66px;
+    }
+  }
+}

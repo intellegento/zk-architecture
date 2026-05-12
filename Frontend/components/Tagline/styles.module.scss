@@ -1,0 +1,41 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.animatedText {
+    position: fixed;
+    bottom: 5vh;
+    z-index: 9;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    mix-blend-mode: difference;
+    
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // margin-right: 25px;
+        overflow: hidden;
+    }
+}
+
+@include respond-above(mac) {
+    .animatedText {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        z-index: 9;
+        // height: 70px;
+        display: flex;
+        flex-direction: row;
+        mix-blend-mode: difference;
+        
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // margin-right: 25px;
+            overflow: hidden;
+        }
+    }
+}

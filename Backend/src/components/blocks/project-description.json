@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_project_descriptions",
+  "info": {
+    "displayName": "ProjectDescription",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    }
+  }
+}

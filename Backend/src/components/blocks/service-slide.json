@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_service_slides",
+  "info": {
+    "displayName": "ServiceSlide",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slideItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-slide-item",
+      "required": true
+    }
+  }
+}

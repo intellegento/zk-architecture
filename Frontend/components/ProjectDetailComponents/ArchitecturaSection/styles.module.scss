@@ -1,0 +1,148 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.architectura {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+
+  &__text {
+    margin-bottom: 70px;
+    &__title {
+      margin-bottom: 15px;
+
+      h3 {
+        font-family: "Inter";
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.04em;
+        text-align: left;
+      }
+    }
+
+    &__description {
+      p {
+        font-family: "Inter-Light";
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: -0.04em;
+        text-align: left;
+      }
+    }
+  }
+
+  &__images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__first,
+    &__second,
+    &__third,
+    &__fourth {
+      width: 100%;
+      height: 240px;
+      margin-bottom: 10px;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &__fourth {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include respond-above (mac) {
+  .architectura {
+    margin-bottom: 200px;
+  
+    &__firstImg {
+      width: 100vw;
+      height: 800px;
+      margin-bottom: 200px;
+    }
+  
+    &__text {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 200px;
+      align-items: flex-start;
+
+      &__title {
+        width: 50%;
+        margin-bottom: 0;
+  
+        h3 {
+          font-family: "Inter";
+          font-size: 45px;
+          line-height: 130%;
+        }
+      }
+  
+      &__description {
+        width: 50%;
+        p {
+          font-family: "Inter-Light";
+          font-size: 20px;
+          line-height: 120%;
+        }
+      }
+    }
+  
+    &__images {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      row-gap: 18px;
+      column-gap: 18px;
+      
+  
+      &__first,
+      &__second,
+      &__third,
+      &__fourth {
+        margin: 0;
+        img {
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      &__first {
+        width: 61.5%;
+        height: auto;
+        aspect-ratio: 1/1.025;
+      }
+
+      &__second {
+        width: 37.1%;
+        height: auto;
+        aspect-ratio: 1/1;
+      }
+
+      &__third,
+      &__fourth {
+        width: 37%;
+        height: auto;
+        aspect-ratio: 1/1;
+      }
+  
+      &__fourth {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+}

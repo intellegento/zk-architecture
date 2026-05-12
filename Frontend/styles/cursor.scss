@@ -1,0 +1,169 @@
+@import "styles/mixins";
+
+html,
+body,
+a,
+label,
+input,
+button {
+  @include respond-above(md) {
+    cursor: none !important;
+  }
+}
+
+#cursor-container,
+#cursor-circle-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 66px;
+  height: 66px;
+  opacity: 0;
+  box-shadow: none;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-66px, -66px);
+  transition: all .05s;
+
+  @include respond-above(mac) {
+    width: 72px;
+    height: 72px;
+    transform: translate(-72px, -72px);
+  }
+
+  @include respond-above(xlg) {
+    width: 83px;
+    height: 83px;
+    transform: translate(-83px, -83px);
+  }
+
+  @include respond-above(fhd-plus) {
+    width: 95px;
+    height: 95px;
+    transform: translate(-95px, -95px);
+  }
+}
+
+#cursor-circle-wrapper {
+  background: $white;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  z-index: 1000;
+  transform: translate(-66px, -66px) scale(0.4);
+
+  @include respond-above(mac) {
+    transform: translate(-72px, -72px) scale(0.4);
+  }
+
+  @include respond-above(xlg) {
+    transform: translate(-83px, -83px) scale(0.4);
+  }
+
+  @include respond-above(fhd-plus) {
+    transform: translate(-95px, -95px) scale(0.4);
+  }
+}
+
+#cursor-container {
+  z-index: 1000;
+
+  .cursor-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    span {
+      width: 100%;
+      margin-top: 0.2em;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: $white;
+
+      @include respond-above(mac) {
+        font-size: 12px;
+      }
+
+      @include respond-above(xlg) {
+        font-size: 13px;
+      }
+
+      @include respond-above(fhd) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .cursor-plus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    span {
+      width: 100%;
+      margin-top: 0.05em;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 19px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: $white;
+
+      @include respond-above(mac) {
+        font-size: 19px;
+      }
+
+      @include respond-above(xlg) {
+        font-size: 21px;
+      }
+
+      @include respond-above(fhd) {
+        font-size: 23px;
+      }
+
+      @include respond-above(fhd-plus) {
+        font-size: 25px;
+      }
+
+      @include respond-above(qhd) {
+        font-size: 27px;
+      }
+    }
+  }
+
+
+  .cursor-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25em;
+
+    svg {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity ease-in-out 0.4s;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+$color-black: #000;
+$color-gray: #8c8c8c;
+
+.aboutVideoSection {
+    padding: 0;
+  width: 100%;
+  margin-bottom: 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  video {
+    width: auto;
+    height: 100vh;
+    height: var(--app-height);
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@include respond-above(sm) {
+  .aboutVideoSection {
+    margin-bottom: 120px;
+
+    video {
+      height: var(--app-height);
+     height: 100%;
+    }
+  }
+}
+
+@include respond-above-portrait (sm) {
+  .aboutVideoSection {
+    margin-bottom: 120px;
+  }
+}
+
+@include respond-above(mac) {
+  .aboutVideoSection {
+    padding: 0;
+    margin-bottom: 200px;
+    video {
+      height: 100%;
+    }
+  }
+}
+
+@include respond-above(xlg) {
+  .aboutVideoSection {
+    &__container {
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .aboutVideoSection {
+    margin-bottom: 250px;
+
+    &__container {
+      max-width: calc(1600px - 128px);
+    }
+  }
+}
+
+@include respond-above(qhd) {
+  .aboutVideoSection {
+    &__container {
+      max-width: calc(1920px - 144px);
+    }
+  }
+}

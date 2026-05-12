@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_service_slide_items",
+  "info": {
+    "displayName": "ServiceSlideItem",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

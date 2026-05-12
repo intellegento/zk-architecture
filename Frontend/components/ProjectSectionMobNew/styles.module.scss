@@ -1,0 +1,80 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+
+
+.projectsSectionMob {
+height: fit-content;
+  margin-bottom: 90px;
+ 
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+    // @media (max-height: 700px) {
+    //   padding-top: 20vh;
+    // }
+    // @media (min-height: 700px) and (max-height: 812px) {
+    //   padding-top: 25vh;
+    // }
+    // @media (min-height: 812px) {
+    //   padding-top: 21vh;
+    // }
+  }
+  
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+
+      &__description {
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+        font-family: "Inter-Light";
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+        letter-spacing: -4%;
+        color: #8C8C8C;
+        margin-bottom: 5px;
+      }
+
+      &__title {
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -4%;
+      }
+    }
+  }
+}
+
+@include respond-above(xs) {
+  .projectsSectionMob {
+    display: none;
+    }
+}
+
+@include respond-above(sm) {
+  
+}
+
+

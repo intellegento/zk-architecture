@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  // min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+}
+
+.text {
+  span {
+    font-size: 60px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    color: #111;
+    animation: zoomup 1s ease infinite;
+    animation-delay: calc(100ms * 5);
+  }
+
+  svg {
+    //filter: drop-shadow(4px 4px 1px #b71c1c);
+    filter: drop-shadow(0 0 20px #fff);
+    animation: zoomup 2s ease infinite;
+    animation-delay: 500ms;
+  }
+}
+
+@keyframes zoomup {
+  10% {
+    filter: drop-shadow(0 0 1px #fff);
+  }
+
+  57% {
+    color: #fff;
+    filter: drop-shadow(0 0 15px #fff);
+  }
+}

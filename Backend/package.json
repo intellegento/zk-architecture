@@ -1,0 +1,32 @@
+{
+  "name": "value-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^6.0.1",
+    "@strapi/plugin-cloud": "5.13.0",
+    "@strapi/plugin-users-permissions": "5.13.0",
+    "@strapi/provider-upload-aws-s3": "^5.13.1",
+    "@strapi/strapi": "5.13.0",
+    "better-sqlite3": "11.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "engines": {
+    "node": "22.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "c10eff41-afa8-49d4-9757-3027c07701dd"
+  }
+}

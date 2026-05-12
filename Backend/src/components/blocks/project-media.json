@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_project_medias",
+  "info": {
+    "displayName": "ProjectMedia",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "desktop",
+        "mobile",
+        "all"
+      ],
+      "default": "all"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  }
+}

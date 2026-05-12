@@ -1,0 +1,260 @@
+@import "styles/varibles";
+@import "styles/mixins";
+
+.bottom {
+    display: none;
+    mix-blend-mode: difference;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: var(--app-height);
+    padding: 50px 20px;
+    // display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bureauSection {
+  height: 100vh;
+  height: var(--app-height);
+  width: 100%;
+  padding-top: 37vh;
+  margin-bottom: 12vh;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__logo {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        fill: #000;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    width: 100%;
+
+    p {
+      font-family: "Inter-Light";
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 120%;
+      letter-spacing: -5%;
+      text-align: justify;
+      opacity: .9;
+
+    }
+  }
+}
+
+
+@include respond-above(sm) {
+
+  .bureauSection {
+  height: var(--app-height);
+    height: 100vh;
+    &__logo {
+      width: 70%;
+    }
+
+    &__description {
+      width: 70%;
+    }
+  }
+}
+
+@include respond-above-portrait(sm) {
+  .bureauSection {
+    padding-top: 31.5vh;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: initial;
+    }
+
+    &__logo {
+      display: flex;
+      width: 87%;
+      height: auto;
+      margin-bottom: 65px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__description {
+      display: flex;
+      width: 87%;
+
+      p {
+        font-family: "Inter-Light";
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 110%;
+        letter-spacing: -0.05em;
+      }
+    }
+  }
+}
+
+@include respond-above(md) {
+  .bottom {
+    display: flex;
+    padding: 50px 40px;
+    display: flex;
+}
+  .bureauSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+
+    &__container {
+      padding-bottom: 50px;
+    }
+    &__logo {
+      width: 56%;
+    }
+    
+
+    &__description {
+      width: 56%;
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .bureauSection {
+    margin-bottom: 150px;
+
+    &__container {
+      justify-content: flex-end;
+      padding-bottom: 64px;
+    }
+
+    &__logo {
+      width: 62%;
+      margin-bottom: 80px;
+    }
+
+    &__description {
+      width: 62%;
+
+      p {
+        font-size: 24px;
+        letter-spacing: -0.06em;
+      }
+    }
+  }
+}
+
+@include respond-above(mac) {
+  .bureauSection {
+    &__description {
+
+      p {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+@include respond-above(xlg) {
+  .bottom {
+    padding: 0 0 50px;
+    display: flex;
+    >div {
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+}
+  .bureauSection {
+    &__container {
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include respond-above(fhd) {
+  .bottom {
+    padding-bottom: 60px;
+    >div {
+      max-width: calc(1600px - 128px);
+    }
+}
+  .bureauSection {
+    &__container {
+      width: 100%;
+      max-width: calc(1600px - 128px);
+      margin: 0 auto;
+      padding-bottom: 60px;
+    }
+
+    &__logo {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+@include respond-above(qhd) {
+  .bottom {
+    >div {
+      max-width: calc(1920px - 144px);
+    }
+}
+  .bureauSection {
+    // padding-top: 0;
+    &__container {
+      max-width: calc(1920px - 144px);
+    }
+
+    &__logo {
+      // width: 55%;
+      margin-bottom: 120px;
+    }
+
+    &__description {
+      // width: 55%;
+
+     
+    }
+  }
+}
+
+// @media screen and (min-aspect-ratio: 21/9) and (max-aspect-ratio: 100/10) {
+//   .bureauSection {
+//     padding-top: 10vw;
+//     display: flex;
+//     height: auto;
+//   }
+// }
