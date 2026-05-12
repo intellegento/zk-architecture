@@ -7,5 +7,6 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
-  url: env('API_URL', 'https://value-ag.com/trix'),
+  // url: env('API_URL', 'https://value-ag.com/trix'),
+  url: env('API_URL')
 });
